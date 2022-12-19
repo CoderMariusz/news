@@ -1,6 +1,6 @@
 import React from 'react';
 import fetchNews from '../../../lib/fetchNews';
-import NewsList from '../../newsList';
+import NewsList from '../../NewsList';
 import categories from '../../../constants';
 
 async function NewsCategory({ params }) {
@@ -14,8 +14,7 @@ async function NewsCategory({ params }) {
 
 export default NewsCategory;
 
-// export async function generateStaticParams() {
-//   const categoriesArr = Array.from(categories);
-//   console.log(categoriesArr);
-//   return categoriesArr.map((category) => ({ category: { category } }));
-// }
+export async function generateStaticParams() {
+  const categoriesArr = Array.from(categories);
+  return categoriesArr.map((category) => ({ category: { category } }));
+}

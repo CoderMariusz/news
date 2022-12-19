@@ -3,7 +3,8 @@ import NewsList from './NewsList';
 import categories from '../constants';
 
 async function page() {
-  const news = await fetchNews(categories.join(','));
+  const categoriesArr = Array.from(categories);
+  const news = await fetchNews(categoriesArr.join(','));
   return <div>{news && <NewsList news={news} />}</div>;
 }
 
